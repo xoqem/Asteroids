@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
+  minSpeed: -2
   maxTurnSpeed: 0
 --- !u!114 &1233633336
 MonoBehaviour:
@@ -306,4 +307,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
+  minSpeed: -2
   maxTurnSpeed: 6
