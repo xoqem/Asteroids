@@ -22,6 +22,10 @@ public class ShipControllerScript : MonoBehaviour {
 		speed = Mathf.Max (speed, minSpeed);
 		speed = Mathf.Min (speed, maxSpeed);
 
+		if (Input.GetKey (KeyCode.Backspace)) {
+			speed = 0;
+		}
+
 		// rotate the ship
 		rigidbody2D.transform.Rotate(0, 0, -turning);
 			
