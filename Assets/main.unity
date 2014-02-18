@@ -456,4 +456,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 1233633335}
-  turnSpeedScale: 10
+  turnSpeedScale: 6
