@@ -203,8 +203,8 @@ GameObject:
   - 92: {fileID: 661534174}
   - 124: {fileID: 661534173}
   - 81: {fileID: 661534172}
-  - 114: {fileID: 661534177}
   - 114: {fileID: 661534178}
+  - 114: {fileID: 661534177}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Player
@@ -282,11 +282,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 661534171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e8236534b63c342bbfc8a9a5296782, type: 3}
+  m_Script: {fileID: 11500000, guid: ff5e4528feba845498e2e46b27447469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1233633332}
-  distance: 10
+  ship: {fileID: 1233633335}
+  speedBarBackgroundColor: {r: .617647052, g: 0, b: 0, a: 1}
+  speedBarColor: {r: 1, g: 1, b: 0, a: 1}
+  targetSpeedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &661534178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,13 +297,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 661534171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5e4528feba845498e2e46b27447469, type: 3}
+  m_Script: {fileID: 11500000, guid: 22e8236534b63c342bbfc8a9a5296782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 1233633336}
-  speedBarBackgroundColor: {r: .691176474, g: 0, b: 0, a: 1}
-  speedBarColor: {r: 1, g: 1, b: 0, a: 1}
-  targetSpeedColor: {r: 1, g: 0, b: 0, a: 1}
+  target: {fileID: 1233633332}
+  distance: 10
 --- !u!1 &1233633330
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +314,7 @@ GameObject:
   - 50: {fileID: 1233633334}
   - 60: {fileID: 1233633333}
   - 114: {fileID: 1233633336}
+  - 114: {fileID: 1233633335}
   m_Layer: 0
   m_Name: ship0
   m_TagString: Untagged
@@ -428,6 +429,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &1233633335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1233633330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210bb74d20a88604094ea964df729f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAcceleration: .100000001
+  maxDeceleration: -.100000001
+  maxSpeed: 10
+  minSpeed: -2
 --- !u!114 &1233633336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,10 +455,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c27abeea4d74bb4e888ce718581c8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAcceleration: .100000001
-  maxDeceleration: -.100000001
-  maxSpeed: 10
-  minSpeed: -2
-  maxTurnSpeed: 6
-  speed: 0
-  targetSpeed: 0
+  ship: {fileID: 1233633335}
+  turnSpeedScale: 10

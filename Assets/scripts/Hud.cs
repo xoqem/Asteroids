@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HudScript : MonoBehaviour {
+public class Hud : MonoBehaviour {
 
-	public ShipControllerScript ship;
+	public Ship ship;
 	public Color speedBarBackgroundColor;
 	public Color speedBarColor;
 	public Color targetSpeedColor;
@@ -13,8 +13,8 @@ public class HudScript : MonoBehaviour {
 	private Texture2D targetSpeedTexture;
 
 	private Rect speedBarBackgroundRect = new Rect (5, 5, 100, 10);
-	private Rect speedBarRect = new Rect(5, 5, 0, 10);
-	private Rect targetSpeedRect = new Rect(5, 4, 2, 12);
+	private Rect speedBarRect = new Rect (5, 5, 0, 10);
+	private Rect targetSpeedRect = new Rect (5, 4, 2, 12);
 	private Texture2D speedBarBackground;
 	private Texture2D speedBarCurrent;
 
@@ -34,8 +34,8 @@ public class HudScript : MonoBehaviour {
 	void Update () {
 		float ratio = speedBarBackgroundRect.width / (ship.maxSpeed - ship.minSpeed);
 		speedBarRect.x = ratio * -ship.minSpeed + speedBarBackgroundRect.x;
-		speedBarRect.width = ratio * (ship.speed);
-		targetSpeedRect.x = ratio * (ship.targetSpeed - ship.minSpeed) + speedBarBackgroundRect.x;
+		speedBarRect.width = ratio * (ship.getSpeed ());
+		targetSpeedRect.x = ratio * (ship.getTargetSpeed () - ship.minSpeed) + speedBarBackgroundRect.x;
 	}
 
 	private Texture2D createTexture(Color color) {

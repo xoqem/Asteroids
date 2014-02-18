@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraScript : MonoBehaviour {
+public class FollowCamera : MonoBehaviour {
 
 	public Transform target;
 	public float distance;
@@ -9,10 +9,10 @@ public class CameraScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update(){
 		Vector3 targetPosition = target.position;
-		this.transform.position = new Vector3(
+		transform.position = new Vector3(
 			targetPosition.x,
 			targetPosition.y,
 			targetPosition.z - distance
-		);		
+		);
 	}
 }
