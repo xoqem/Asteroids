@@ -161,7 +161,7 @@ ParticleAnimator:
   sizeGrow: 0
   rndForce: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  damping: 1
+  damping: 0
   stopSimulation: 0
   autodestruct: 0
 --- !u!15 &189038271
