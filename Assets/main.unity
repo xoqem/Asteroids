@@ -204,6 +204,7 @@ GameObject:
   - 124: {fileID: 661534173}
   - 81: {fileID: 661534172}
   - 114: {fileID: 661534177}
+  - 114: {fileID: 661534178}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Player
@@ -286,6 +287,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1233633332}
   distance: 10
+--- !u!114 &661534178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661534171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5e4528feba845498e2e46b27447469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 1233633336}
+  speedBarBackgroundColor: {r: .691176474, g: 0, b: 0, a: 1}
+  speedBarColor: {r: 1, g: 1, b: 0, a: 1}
+  targetSpeedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1233633330
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,3 +444,5 @@ MonoBehaviour:
   maxSpeed: 10
   minSpeed: -2
   maxTurnSpeed: 6
+  speed: 0
+  targetSpeed: 0

@@ -9,13 +9,9 @@ public class ShipControllerScript : MonoBehaviour {
 	public float minSpeed;
 	public float maxTurnSpeed;
 
-	private float speed = 0;
-	private float targetSpeed = 0;
+	public float speed;
+	public float targetSpeed;
 
-	// Use this for initialization
-	void Start () {
-	}
-	
 	// Update is called once per frame
 	void FixedUpdate () {
 		float acceleration = Input.GetAxis ("Vertical");
