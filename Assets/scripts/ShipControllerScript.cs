@@ -3,11 +3,14 @@ using System.Collections;
 
 public class ShipControllerScript : MonoBehaviour {
 
-	public float maxSpeed = 10;
-	public float minSpeed = -2;
-	public float maxTurnSpeed = 6;
+	public float maxAcceleration;
+	public float maxDeceleration;
+	public float maxSpeed;
+	public float minSpeed;
+	public float maxTurnSpeed;
 
 	private float speed = 0;
+	private float targetSpeed = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,12 +21,24 @@ public class ShipControllerScript : MonoBehaviour {
 		float acceleration = Input.GetAxis ("Vertical");
 		float turning = Input.GetAxis ("Horizontal") * maxTurnSpeed;
 
-		speed += acceleration;
-		speed = Mathf.Max (speed, minSpeed);
-		speed = Mathf.Min (speed, maxSpeed);
+		// add the acceleration to the target speed
+		targetSpeed += acceleration;
 
+		// make sure our target speed is within our min and max speed
+		targetSpeed = Mathf.Max (targetSpeed, minSpeed);
+		targetSpeed = Mathf.Min (targetSpeed, maxSpeed);
+
+		// check to see if the ship is being asked to stop
 		if (Input.GetKey (KeyCode.Backspace)) {
-			speed = 0;
+			targetSpeed = 0;
+		}
+
+		if (speed < targetSpeed) {
+			speed += maxAcceleration;
+			speed = Mathf.Min (speed, targetSpeed);
+		} else if (speed > targetSpeed) {
+			speed += maxDeceleration;
+			speed = Mathf.Max (speed, targetSpeed);
 		}
 
 		// rotate the ship
